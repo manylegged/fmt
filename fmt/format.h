@@ -1293,7 +1293,7 @@ class UserFormatter {
 public:
   typedef AF ArgFormatter;
   typedef typename AF::Char Char;
-  typedef MakeArg< UserFormatter > MakeArg;
+    typedef fmt::internal::MakeArg< UserFormatter > MakeArg;
     
   UserFormatter(AF &af) : af_(af) {}
 

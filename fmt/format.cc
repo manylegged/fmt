@@ -65,6 +65,9 @@
 // Disable deprecation warning for strerror. The latter is not called but
 // MSVC fails to detect it.
 # pragma warning(disable: 4996)
+#elif defined(__GNUC__)
+# pragma GCC diagnostic push
+# pragma GCC diagnostic ignored "-Wformat-nonliteral"
 #endif
 
 // Dummy implementations of strerror_r and strerror_s called if corresponding
@@ -539,4 +542,6 @@ template FMT_API int internal::CharTraits<wchar_t>::format_float(
 
 #ifdef _MSC_VER
 # pragma warning(pop)
+#elif defined(__GNUC__)
+# pragma GCC diagnostic pop
 #endif
