@@ -331,7 +331,7 @@ typedef __int64          intmax_t;
 
 #ifndef FMT_USE_EXTERN_TEMPLATES
 # define FMT_USE_EXTERN_TEMPLATES \
-    (FMT_CLANG_VERSION >= 209 || (FMT_GCC_VERSION >= 303 && FMT_HAS_GXX_CXX11))
+    (FMT_CLANG_VERSION >= 209 || (FMT_GCC_VERSION >= 303 && FMT_HAS_GXX_CXX11) || (FMT_MSC_VER >= 1800))
 #endif
 
 #ifdef FMT_HEADER_ONLY
